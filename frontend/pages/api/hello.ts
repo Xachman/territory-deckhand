@@ -2,16 +2,21 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 }
 
 type Data = {
   name: string
 }
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+export default function handler() {
+  return new Response(
+    JSON.stringify({ name: 'John Doe' }),
+    {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  )
 }
