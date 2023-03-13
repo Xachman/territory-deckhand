@@ -9,7 +9,8 @@ type Data = {
   name: string
 }
 
-export default function handler() {
+export default function handler(res: Request) {
+  console.log(res)
   return new Response(
     JSON.stringify({ name: 'John Doe' }),
     {

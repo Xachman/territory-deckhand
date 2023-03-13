@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styles from '@/styles/Home.module.css'
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
